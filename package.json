@@ -1,0 +1,36 @@
+{
+  "name": "thesis-app-1-backend",
+  "version": "1.0.0",
+  "description": "backend using express.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isneverdead/my-thesis-backend.git"
+  },
+  "keywords": [
+    "Express",
+    "backend"
+  ],
+  "author": "Fariz Akbar S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isneverdead/my-thesis-backend/issues"
+  },
+  "homepage": "https://github.com/isneverdead/my-thesis-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
