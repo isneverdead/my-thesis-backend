@@ -1,7 +1,9 @@
 'use strict';
-const { Model } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class TimeTable_used_by extends Model {
+  class TimeTable_saved extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,15 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  TimeTable_used_by.init(
-    {
-      timetable_id: DataTypes.INTEGER,
-      user_id: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      modelName: 'TimeTable_used_by',
-    }
-  );
-  return TimeTable_used_by;
+  TimeTable_saved.init({
+    timetableId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'TimeTable_saved',
+  });
+  return TimeTable_saved;
 };

@@ -1,5 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
+const TimeTableTodos = require('./timetable_todo');
 module.exports = (sequelize, DataTypes) => {
   class TimeTable extends Model {
     /**
@@ -16,10 +17,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'timetableId',
         as: 'timetable',
       });
-      this.hasMany(models.TimeTable_rating, {
+      this.hasMany(models.TimeTable_ratings, {
         as: 'ratings',
       });
-      models.TimeTable_rating.belongsTo(this, {
+      models.TimeTable_ratings.belongsTo(this, {
         foreignKey: 'timetableId',
         as: 'timetable',
       });
@@ -41,8 +42,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   TimeTable.init(
     {
-      userId: DataTypes.INTEGER,
+      user_id: DataTypes.INTEGER,
+
       title: DataTypes.STRING,
+
       published: DataTypes.BOOLEAN,
     },
     {
@@ -50,5 +53,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'TimeTable',
     }
   );
+
   return TimeTable;
 };

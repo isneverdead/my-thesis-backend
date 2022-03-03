@@ -12,23 +12,23 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'timetable_saved_bies',
+      'TimeTable_saveds',
       [
         {
-          timetable_id: 2,
-          user_id: 2,
+          timetableId: 2,
+          userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          timetable_id: 2,
-          user_id: 3,
+          timetableId: 2,
+          userId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          timetable_id: 2,
-          user_id: 4,
+          timetableId: 2,
+          userId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -44,6 +44,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('timetable_saved_bies', null, {});
+    await queryInterface.bulkDelete('TimeTable_saveds', null, {});
   },
 };

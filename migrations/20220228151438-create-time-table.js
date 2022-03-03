@@ -1,21 +1,21 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('TimeTable_ratings', {
+    await queryInterface.createTable('TimeTables', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      timetable_id: {
+      userId: {
         type: Sequelize.INTEGER(11),
       },
-      user_id: {
-        type: Sequelize.INTEGER(11),
+      title: {
+        type: Sequelize.STRING(20),
       },
-      rating: {
-        type: Sequelize.INTEGER(1),
+      published: {
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('TimeTable_ratings');
+    await queryInterface.dropTable('TimeTables');
   },
 };

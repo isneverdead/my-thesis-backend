@@ -1,5 +1,7 @@
 'use strict';
-const { Model } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class TimeTable_rating extends Model {
     /**
@@ -11,16 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  TimeTable_rating.init(
-    {
-      timetable_id: DataTypes.INTEGER,
-      user_id: DataTypes.INTEGER,
-      rating: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      modelName: 'TimeTable_rating',
-    }
-  );
+  TimeTable_rating.init({
+    timetableId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
+    rate: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'TimeTable_rating',
+  });
   return TimeTable_rating;
 };

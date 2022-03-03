@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   TimeTable_todo.init({
-    timetable_id: DataTypes.INTEGER,
+    timetableId: DataTypes.INTEGER,
     activity: DataTypes.STRING,
-    start_at: DataTypes.DATE,
-    end_at: DataTypes.DATE
+    startAt: DataTypes.DATE,
+    endAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'TimeTable_todo',

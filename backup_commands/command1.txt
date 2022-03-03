@@ -1,0 +1,22 @@
+
+npx sequelize db:migrate
+npx sequelize db:migrate:undo --name 20220227160800-create-time-table-todo.js
+npx sequelize db:migrate:undo --name 20220227193842-create-time-table-saved-by.js
+npx sequelize db:migrate:undo --name 20220227194130-create-time-table-rating.js
+npx sequelize db:migrate:undo --name 20220227194152-create-time-table-used-by.js
+npx sequelize db:migrate:undo --name 20220227102432-create-time-table.js
+
+
+npx sequelize-cli model:generate --name TimeTable --attributes userId:integer,title:string,published:boolean
+npx sequelize-cli model:generate --name TimeTable_todo --attributes timetableId:integer,activity:string,startAt:date,endAt:date
+npx sequelize-cli model:generate --name TimeTable_saved --attributes timetableId:integer,userId:integer
+npx sequelize-cli model:generate --name TimeTable_used --attributes timetableId:integer,userId:integer
+npx sequelize-cli model:generate --name TimeTable_rating --attributes timetableId:integer,userId:integer,rate:integer
+
+
+npx sequelize db:seed --seed 20220227161325-demo-timetable.js
+npx sequelize db:seed --seed 20220227161349-demo-timetable-todo.js 
+npx sequelize db:seed --seed 20220227183824-demo-timetable-rating.js 
+npx sequelize db:seed --seed 20220227183840-demo-timetable-savedby.js
+npx sequelize db:seed --seed 20220227183850-demo-timetable-usedby.js
+

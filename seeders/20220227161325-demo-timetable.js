@@ -12,11 +12,18 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'timetables',
+      'TimeTables',
       [
         {
-          user_id: 2,
-          title: 'mencari ilmu',
+          userId: 2,
+          title: 'Mencari Uang',
+          published: false,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 1,
+          title: 'Melebihi batas',
           published: false,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -33,6 +40,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('timetables', null, {});
+    await queryInterface.bulkDelete('TimeTables', null, {});
   },
 };

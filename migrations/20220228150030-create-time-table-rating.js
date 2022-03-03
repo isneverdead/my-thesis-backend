@@ -1,18 +1,21 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('TimeTable_saved_by', {
+    await queryInterface.createTable('TimeTable_ratings', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      timetable_id: {
+      timetableId: {
         type: Sequelize.INTEGER(11),
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER(11),
+      },
+      rate: {
+        type: Sequelize.INTEGER(1),
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('TimeTable_saved_by');
+    await queryInterface.dropTable('TimeTable_ratings');
   },
 };

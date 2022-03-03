@@ -1,17 +1,17 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('TimeTable_used_by', {
+    await queryInterface.createTable('TimeTable_useds', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      timetable_id: {
+      timetableId: {
         type: Sequelize.INTEGER(11),
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER(11),
       },
       createdAt: {
@@ -25,6 +25,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('TimeTable_used_by');
+    await queryInterface.dropTable('TimeTable_useds');
   },
 };
